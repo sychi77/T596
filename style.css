@@ -1,19 +1,26 @@
+.body {
+    background:#F5F5F5;
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
 }
 
-/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {
-    height: 450px
+.nav-link {
+    color: white;
+    border-radius: 0 !important;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
 }
 
-/* Set gray background color and 100% height */
-.sidenav {
-    padding-top: 20px;
-    background-color: #f1f1f1;
-    height: 100%;
+.nav-link:hover {
+    color: darkgreen;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #212529;
 }
 
 /* Set black background color, white text and some padding */
@@ -21,16 +28,4 @@ footer {
     background-color: #555;
     color: white;
     padding: 15px;
-}
-
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-    .sidenav {
-        height: auto;
-        padding: 15px;
-    }
-
-    .row.content {
-        height: auto;
-    }
 }
