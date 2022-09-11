@@ -13,11 +13,25 @@
     </script>
     <!-- Index CSS Styles -->
     <link rel="stylesheet" href="./style.css">
+    <!-- SVG for Info Message -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path
+                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+        </symbol>
+    </svg>
 </head>
 
 <body>
+    <!-- Disclaimer Message -->
+    <div class="alert alert-warning alert-dismissible fade show mb-0 p-0" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+            <use xlink:href="#info-fill" /></svg>
+        <strong>Disclaimer:</strong> All content on this site is for educational purposes only.
+        <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <!-- Header Nav Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <img src="./assets/team_7_logo.png" alt="" width="80" height="80" class="d-inline-block align-text-top">
             <!-- TEAM 7 -->
@@ -37,7 +51,7 @@
         </div>
     </nav>
     <!-- Secondary Navbar -->
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="background: #01579b;">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="background: #e3f2fd;">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="pills-assets-tab" data-bs-toggle="pill"
                 data-bs-target="#pills-assets" type="button" role="tab" aria-controls="pills-assets"

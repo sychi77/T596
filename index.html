@@ -23,8 +23,15 @@
 </head>
 
 <body>
+    <!-- Disclaimer Message -->
+    <div class="alert alert-warning alert-dismissible fade show mb-0 p-0" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+            <use xlink:href="#info-fill" /></svg>
+        <strong>Disclaimer:</strong> All content on this site is for educational purposes only.
+        <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <!-- Header Nav Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <img src="./assets/team_7_logo.png" alt="" width="80" height="80" class="d-inline-block align-text-top">
             <!-- TEAM 7 -->
@@ -44,7 +51,7 @@
         </div>
     </nav>
     <!-- Secondary Navbar -->
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="background: #01579b;">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="background: #e3f2fd;">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="pills-industry-tab" data-bs-toggle="pill"
                 data-bs-target="#pills-industry" type="button" role="tab" aria-controls="pills-industry"
@@ -57,21 +64,91 @@
     </ul>
     <!-- Body Content -->
     <div class="container-fluid text-center">
-        <!-- Disclaimer Message -->
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
-                <use xlink:href="#info-fill" /></svg>
-            <strong>Disclaimer:</strong> All content on this site is for educational purposes only.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
         <!-- Second Nav Content -->
         <div class="tab-content" id="pills-tabContent">
+            <!-- Industry Background -->
             <div class="tab-pane fade show active" id="pills-industry" role="tabpanel"
                 aria-labelledby="pills-industry-tab">
                 Industry background...
             </div>
+            <!-- Threat trends -->
             <div class="tab-pane fade" id="pills-threat" role="tabpanel" aria-labelledby="pills-threat-tab">
-                Threat trend here...
+                <div class="accordion" id="accordionPanelsStayOpenThreat" style="text-align: left;">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            Data Leaks
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <p>
+                                Data leaks have always been problematic. But the oil and gas industry is more
+                                susceptible to these threats because leaked information can be quite beneficial to a
+                                competitor. Data leaks can also cause substantial damage to a company's reputation.
+                            </p>
+                            <p>
+                                One way of finding these documents is by using specially crafted Google queries, called
+                                Google Dorks. Another way to find such content is to hunt for data on public services
+                                like Pastebin, an online service that allows anyone to copy and paste any text-based
+                                content and store it there, privately, or publicly. Another source of data is public
+                                sandboxes meant for analysis of suspicious files. Users can mistakenly send legitimate
+                                documents to these sandboxes for analysis. Once uploaded, these documents can be parsed
+                                or downloaded by third parties.
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                            Espionage & Data Theft
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            <p>
+                                Data theft and espionage can be the starting point of a larger destructive attack. Attackers often need specific information before attempting further action. Obtaining sensitive data like well drilling techniques, data on suspected oil and gas reserves, and special recipes for premium products can also translate to monetary gain for attackers.
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+                            Sabotage
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            <p>
+                                In oil and gas industry, sabotage can be done by changing the behavior of software, deleting specific content to disrupt company activity or deleting as much content as possible on every accessible machine.
+                            </p>
+                            <p>
+                                Some examples of these kinds of sabotage operations have been reported broadly, the most famous being the Stuxnet case. Stuxnet was a piece of self-replicating malware that contained a very targeted and specific payload. Most infections of the worm were in Iran and analysis revealed that it was designed to exclusively target the centrifuge in the uranium enrichment facility of the Natanz Nuclear Plant in the country.
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
+                            DNS Hijacking
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingFour">
+                        <div class="accordion-body">
+                            <p>
+                                DNS hijacking is a form of data theft used by advanced attackers. The objective is to gain access to the corporate VPN network or corporate emails of governments and companies. Several oil companies being targeted by advanced attackers who probably have certain geopolitical goals in mind.
+                            </p>
+                            <p>
+                                In DNS hijacking, the DNS settings of a domain name are modified by an unauthorized third party. The third-party can, for instance, add an entry to the zone file of a domain or alter the resolution of one or more of the existing hostnames. The simplest things the attacker can do are committing vandalism(defacement), leaving a message on the hijacked website, and making the website unavailable. This will usually be noticed easily and the result may just be reputational damage.
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
             </div>
         </div>
 
