@@ -53,9 +53,8 @@
     <!-- Secondary Navbar -->
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="background: #e3f2fd;">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-assets-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-assets" type="button" role="tab" aria-controls="pills-assets"
-                aria-selected="true">Critical Assets</button>
+            <button class="nav-link active" id="pills-assets-tab" data-bs-toggle="pill" data-bs-target="#pills-assets"
+                type="button" role="tab" aria-controls="pills-assets" aria-selected="true">Critical Assets</button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-diamond-tab" data-bs-toggle="pill" data-bs-target="#pills-diamond"
@@ -68,17 +67,195 @@
     </ul>
     <!-- Body Content -->
     <div class="container-fluid text-center">
-
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-assets" role="tabpanel"
-                aria-labelledby="pills-assets-tab">
-                Critical assets here...
+            <!-- Critical Assets -->
+            <div class="tab-pane fade show active p-4" style="text-align: left;" id="pills-assets" role="tabpanel" aria-labelledby="pills-assets-tab">
+                <!-- Title -->
+                <div class="mb-4">
+                    <h1>Critical Assets</h1>
+                </div>
+                <!-- Crit Asset Table -->
+                <table class="table table-hover table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Stage</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Exploration -->
+                        <tr>
+                            <th scope="row">Exploration</th>
+                            <td>Asset #1</td>
+                            <td>G&G workstation(Geology & Geophysics), Network attached storage and Data Processing systems - (IT Systems)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Value</td>
+                            <td>G&G workstations are used to locate and identify properties with the potential to produce commercial quantities of oil and natural gas, as well as to determine the optimal location for exploratory and developmental wells.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Ramifications if breached</td>
+                            <td>Company's competitive field data is at most risk. When this field data (exploration data) starts feeding in real-time into cross-discipline upstream operations such as drilling plans of nearby fields, completion designs and reserve estimations, a cyberattacks impact would multiply from a potential revenue loss to a significant business disruption.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>People using</td>
+                            <td>Oil and Gas Industry</td>
+                        </tr>
+                        <!-- Development -->
+                        <tr>
+                            <th scope="row">Development</th>
+                            <td>Asset #2</td>
+                            <td>Distributed control systems (DCS) - (OT Systems)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Value</td>
+                            <td>A computerized control system for a plant that  consists of many control loops, in which autonomous controllers are distributed throughout the system.
+                                DCS is used to enhance reliability and reduce installation costs by localizing control functions near the process plant, with remote monitoring and supervision.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Ramifications if breached</td>
+                            <td>A rogue software program hiding in a rig component's system or appearing from a network loop, enters the DCS and begins governing essential drilling parameters.
+                                The result is angular deviation of the well, sudden fluid influx, and well integrity issues, leading to significant additional costs and putting both people and the environment at risk. </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>People using</td>
+                            <td>Oil and Gas Industry</td>
+                        </tr>
+                        <!-- Production -->
+                        <tr>
+                            <th scope="row">Production</th>
+                            <td>Asset #3</td>
+                            <td>Control room workstation/Production controller (ICS/OT Systems)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Value</td>
+                            <td>Control room workstations are the nerve center of the pipeline as control technicians monitor thousands of points, adjusting pressures and directing flow to meet customer needs and ensure that everything is working properly.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Ramifications if breached</td>
+                            <td>A worm is deployed on an onshore ICS that can make changes to logics in PLC and bypass the protective gearbox for motor pumps. The worm masks the condition of the gearbox in control rooms and changes the speed of the pumps randomly. These variations lead to suboptimal oil production, higher wear and tear of pumps, and even rupturing of wells.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>People using</td>
+                            <td>Oil and Gas Industry</td>
+                        </tr>
+                        <!-- Transportation -->
+                        <tr>
+                            <th scope="row">Transportation</th>
+                            <td>Asset #4</td>
+                            <td>Pipelines, Tankers, Trucks</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Value</td>
+                            <td>Crude oil moves from wellhead to refinery using Tankers, pipelines, trucks, and railroads. Natural gas is transported by pipelines and liquefied natural gas tankers.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Ramifications if breached</td>
+                            <td>Unauthorized access to and manipulation of pipelines systems.
+                                Explosion, spillage, environmental, damage, and unsafe conditions for personnel and adjacent populations. Shutdown of system for investigation, resulting in missed shipments and financial loss.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>People using</td>
+                            <td>Oil and Gas Industry</td>
+                        </tr>
+                        <!-- Refining -->
+                        <tr>
+                            <th scope="row">Refining</th>
+                            <td>Asset #5</td>
+                            <td>Valve actuators & Pressure sensor(SCADA Control systems)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Value</td>
+                            <td>Actuators such as control valves, breakers, switches, and motors are used to directly manipulate the controlled process based on commands from the controller.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Ramifications if breached</td>
+                            <td>Interruption or tampering with Actuators/Sensors will lead to unsafe operating conditions and downtime, leading to supply disruption and revenue loss</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>People using</td>
+                            <td>Oil and Gas Industry</td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
-            <div class="tab-pane fade" id="pills-diamond" role="tabpanel" aria-labelledby="pills-diamond-tab">
-                Diamond Models here...
+            <!-- Diamond Models -->
+            <div class="tab-pane fade p-2" id="pills-diamond" role="tabpanel" aria-labelledby="pills-diamond-tab" style="text-align: center;margin:auto;">
+                <!-- Title -->
+                <div>
+                    <h1>Diamond Models</h1>
+                </div>
+                <!-- Quick select buttons -->
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group my-4" style="margin:auto;" role="group" aria-label="Diamond Model buttons group">
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="0">1</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="1">2</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="2">3</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="3">4</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="4">5</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="5">6</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="6">7</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="7">8</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="8">9</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="9">10</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="10">11</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="11">12</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="12">13</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="13">14</button>
+                      <button type="button" class="btn btn-outline-primary" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="14">15</button>
+                    </div>
+                  </div>
+                <!-- Carousel -->
+                <div id="diamondCarouselIndicators" class="carousel carousel-dark slide w-75" style="margin:auto;" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#diamondCarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./assets/dm1.png" class="d-block h-100" style="margin:auto;" alt="Diamond Model 1">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./assets/dm2.png" class="d-block h-100" style="margin:auto;" alt="Diamond Model 2">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./assets/dm3.png" class="d-block h-100" style="margin:auto;" alt="Diamond Model 3">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#diamondCarouselIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#diamondCarouselIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
             </div>
+            <!-- Intelligence Buyin -->
             <div class="tab-pane fade" id="pills-buyin" role="tabpanel" aria-labelledby="pills-buyin-tab">
-                Intelligence Buyin here...
+                <!-- Title -->
+                <div>
+                    <h1>Intelligence Buyin</h1>
+                </div>
             </div>
         </div>
 
