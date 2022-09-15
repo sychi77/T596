@@ -1,5 +1,9 @@
 .body {
-    background:#F5F5F5;
+    background: #F5F5F5;
+}
+
+.container-fluid {
+    --bs-gutter-x: 0 !important;
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
@@ -23,6 +27,25 @@
     background-color: #0d6efd;
 }
 
+/* Industry Background */
+.parallax-industrybg {
+    /* The image used */
+    background-image: url("./assets/oil-gas-city.jpg");
+
+    /* Set a specific height */
+    min-height: 300px;
+
+    /* Curved bottom edges */
+    /* border-radius: 0px 0px 350px 350px; */
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* About Us */
 .profile-img {
     max-height: 200px;
 }
