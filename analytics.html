@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>T596: AI For Cybersecurity (Team 6)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+    <!-- Index CSS Styles -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- SVG for Info Message -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path
+                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+        </symbol>
+    </svg>
+</head>
+
+<body class="bg-light">
+    <!-- Disclaimer Message -->
+    <div class="alert alert-warning alert-dismissible fade show mb-0 p-0" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+            <use xlink:href="#info-fill" /></svg>
+        <strong>Disclaimer:</strong> All content on this site is for educational purposes only.
+        <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- Header Nav Bar -->
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <div class="container-fluid">
+            <img src="./assets/team_6_logo.png" alt="Team 6 Logo" width="60" height="60" class="d-inline-block align-text-top">
+            <!-- Team 6 -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item p-3">
+                        <a class="nav-link" aria-current="page" href="#">Industry Background</a>
+                    </li>
+                    <li class="nav-item p-3">
+                        <a class="nav-link" href="./threat-model.html">Threat Modelling</a>
+                    </li>
+                    <li class="nav-item p-3">
+                        <a class="nav-link" href="./data.html">Data</a>
+                    </li>
+                    <li class="nav-item p-3">
+                        <a class="nav-link active" href="#">Analytical Approach</a>
+                    </li>
+                    <li class="nav-item p-3">
+                        <a class="nav-link" href="./about-us.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Secondary Navbar -->
+    <ul class="nav nav-pills" id="pills-tab" role="tablist" style="background: #e3f2fd;">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-shodan1-tab" data-bs-toggle="pill" data-bs-target="#pills-shodan1"
+                type="button" role="tab" aria-controls="pills-shodan1" aria-selected="true">Shodan CPE</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-shodan2-tab" data-bs-toggle="pill" data-bs-target="#pills-shodan2"
+                type="button" role="tab" aria-controls="pills-shodan2" aria-selected="false">Shodan IoT</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-malware-tab" data-bs-toggle="pill" data-bs-target="#pills-malware"
+                type="button" role="tab" aria-controls="pills-malware" aria-selected="false">MalwareBazaar Threat Detection</button>
+        </li>
+    </ul>
+    <!-- Body Content -->
+    <div class="container-fluid text-center">
+        <!-- Second Nav Content -->
+        <div class="tab-content" id="pills-tabContent">
+            <!-- Shodan CPE -->
+            <div class="tab-pane fade show active p-4" id="pills-shodan1" role="tabpanel"
+                aria-labelledby="pills-shodan1-tab">
+                <!-- Title -->
+                <div class="mb-4" style="text-align: left;">
+                    <h1>Shodan CPE</h1>
+                </div>
+                <!-- Approach & Justification -->
+                <div class="row">
+                    <!-- Approach -->
+                    <div class="col-lg-6">
+                        <h2>Approach</h2>
+                        <hr>
+                        <div class="accordion" id="accordionPanelsStayOpenShodanApproach" style="text-align: left;">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        Overview
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            Data Source: Data extracted from Shodan (See Data section)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        Analytic Process
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            <ol>
+                                                <li>Data retrieved from Shodan via their API into CSV</li>
+                                                <li>Data cleaned to remove non-pertinent data (e.g. latitude)</li>
+                                                <li>Data filtered to remove data from outside U.S. and identify CPEs.
+                                                </li>
+                                                <li>Use Shodan CPE data to known vulnerability (see Example below)</li>
+                                                <li>Data imported into H20.ai to run model keying on the product
+                                                    attribute. (See Modeling Process below)</li>
+                                            </ol>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                        Example
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            CPE:['cpe:/a:jquery:jquery']
+                                        </p>
+                                        <p>
+                                            Example CPE code from Shodan vulnerability data. This code can be used in
+                                            the CVE database to get details on how many vulnerabilities have been
+                                            identified for a system, what they are, and possible remedies.
+                                        </p>
+                                        <img src="./assets/analytics/nvd_example.png" class="mw-100"
+                                            alt="Example of NVD vulnerability site">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseFour">
+                                        Modeling Process
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingFour">
+                                    <div class="accordion-body px-5">
+                                        <ol>
+                                            <li>Uploaded CSV of cleaned of Shodan data containing 597 rows.</li>
+                                            <li>Classified the data on the product data</li>
+                                            <li>Used 3-fold for cross validation</li>
+                                            <li>H20.ai processed 21 iterations and 405 models fine tuning the
+                                                parameters.</li>
+                                            <li>The final model is a stacked ensemble of 2 LightGBMModels, 1
+                                                TensorFlowModel</li>
+                                            <li>The final model correctly classified the product data 97.50% of the time
+                                                (see ROC) diagram</li>
+                                        </ol>
+                                        <img src="./assets/analytics/shodan_cpe_model_roc.png" class="mw-100"
+                                            alt="Shodan Model ROC Diagram">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Justification -->
+                    <div class="col-lg-6">
+                        <h2>Justification</h2>
+                        <hr>
+                        <div class="accordion" id="accordionPanelsStayOpenShodanJustification"
+                            style="text-align: left;">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        Overview
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            Classification of manufacturing devices, in the U.S., Shodan has identified
+                                            as vulnerable.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        Why?
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            ICS/SCADA/OT/PLC are devices critical to the oil and gas manufacturing in
+                                            the U.S. All organizations need to be aware if they are operating
+                                            software/hardware that has been compromised. Data was pulled from Shodan
+                                            that detailed versions of these devices that have vulnerabilities.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                        Strategic Value
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            Classifying systems which have a known vulnerability to a cyber event could
+                                            be the difference between avoiding an event and going bankrupt due to one.
+                                            Planning could be put into place to upgrade the system(s) Colonial Pipeline
+                                            cyber attack costs them $4.4 million just in the ransom (Shear et al.,
+                                            2021).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseFour">
+                                        Operational Value
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingFour">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            Classifying systems which have a known vulnerability to a cyber event could
+                                            enable operations to enforce stricter rules on the system, be aware to
+                                            proactively monitor for unusual activity, use CPE data to be aware of attack
+                                            methods, and research old events with more insight into root cause.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseFive">
+                                        Tactical Value
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingFive">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            Classifying systems which have a known vulnerability to a cyber event would
+                                            enable administrators take steps to proactively address the vulnerability
+                                            via methods such as patches.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Shodan IoT -->
+            <div class="tab-pane fade p-4" id="pills-shodan2" role="tabpanel"
+                aria-labelledby="pills-shodan2-tab">
+                <!-- Title -->
+                <div class="mb-4" style="text-align: left;">
+                    <h1>Shodan IoT</h1>
+                </div>
+                <!-- Approach & Justification -->
+                <div class="row">
+                    <!-- Approach -->
+                    <div class="col-lg-6">
+                        <h2>Approach</h2>
+                        <hr>
+                        <div class="accordion" id="accordionPanelsStayOpenShodan2Approach" style="text-align: left;">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        Steps
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            Steps involved in Performing Analytical Approach
+                                        </p>
+                                        <ol>
+                                            <li>Data Collection and building a Dataset (See Data section)</li>
+                                            <li>Data Pre-processing
+                                                <ul>
+                                                    <li>
+                                                        <img src="./assets/analytics/shodan_iot_step2.png" class="mw-100" alt="Shodan IoT Step 2">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>Feature Extraction/Selection
+                                                <ul>
+                                                    <li>
+                                                        <img src="./assets/analytics/shodan_iot_step3.png" class="mw-100" alt="Shodan IoT Step 3">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>Define Labels
+                                                <ul>
+                                                    <li>
+                                                        <img src="./assets/analytics/shodan_iot_step4.png" class="mw-100" alt="Shodan IoT Step 4">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        Analytical Approach (Classification)
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body px-5">
+                                        <ol>
+                                            <li>Total records in the dataset - 13400</li>
+                                            <li>Label - Nominal</li>
+                                            <li>Correct and Incorrect Classification</li>
+                                            <li>Evaluation method(Precision, Recall, F-Measure) </li>
+                                            <ul>
+                                                <li>Precision - % results are correct</li>
+                                                <li>Recall - % correct results found</li>
+                                                <li>F-Score - Harmonic mean of Precision and Recall</li>
+                                            </ul>
+                                            <li>Confusion Matrix - Total correct values predicted per class</li>
+                                            <li>Other Methods used - Naïve Bayes</li>
+                                        </ol>
+                                        <img src="./assets/analytics/shodan_iot_approach.png" class="mw-100" alt="Shodan IoT Approach">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Justification -->
+                    <div class="col-lg-6">
+                        <h2>Justification</h2>
+                        <hr>
+                        <div class="accordion" id="accordionPanelsStayOpenShodan2Justification"
+                        style="text-align: left;">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    Why?
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body px-5">
+                                    <p>
+                                        The Dataset from Shodan has several IOT devices. IOT devices are considered less secure. We choose “IOT devices detection and classification”. In an enterprise when an IOT device is connected we should be able to detect and classify it.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseTwo">
+                                    Value
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body px-5">
+                                    <p>
+                                        The enterprise can gain better understanding of threat landscape and vulnerabilities of those devices and make better strategic and operation decisions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseThree">
+                                    Future Value
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body px-5">
+                                    <p>
+                                        Detect and Analyze vulnerabilities of any future connected IOT devices in near Realtime and classify their threat level in an enterprise.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MalwareBazaar -->
+            <div class="tab-pane fade p-4" id="pills-malware" role="tabpanel" aria-labelledby="pills-malware-tab">
+                <!-- Title -->
+                <div class="mb-4" style="text-align: left;">
+                    <h1>MalwareBazaar Threats</h1>
+                </div>
+                <!-- Approach & Justification -->
+                <div class="row">
+                    <!-- Approach -->
+                    <div class="col-lg-6">
+                        <h2>Approach</h2>
+                        <hr>
+                        <div class="accordion" id="accordionPanelsStayOpenMalwareApproach" style="text-align: left;">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        Steps (Clustering)
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            Steps involved in Performing Analytical Approach (Clustering)
+                                        </p>
+                                        <ol>
+                                            <li>
+                                                Data Collection and building a Dataset (See Data section)
+                                            </li>
+                                            <li>
+                                                Data Pre-processing
+                                                <img src="./assets/analytics/malware_cluster_step2.png" class="mw-100" alt="MalwareBazaar Approach Step 2: Data Pre-processing">
+                                            </li>
+                                            <li>
+                                                Feature Extraction/Selection
+                                                <img src="./assets/analytics/malware_cluster_step3.png" class="mw-100" alt="MalwareBazaar Approach Step 3: Feature Extraction/Selection">
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        Analytic Approach (Clustering)
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body px-5">
+                                        <ol>
+                                            <li>Total records in the dataset - 68723</li>
+                                            <li>Label - Legitimate(Nominal)</li>
+                                            <li>Cluster Instances</li>
+                                            <li>Confusion Matrix </li>
+                                            <ul>
+                                                <li>41759 correctly identified as suspect and 6504 mistakenly considered as legitimate</li>
+                                                <li>17277 correctly identified as legitimate and 3183  mistakenly identified as suspects</li>
+                                            </ul>
+                                            <li>Other Methods used - EM, Decision Tree, Random forest</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Justification -->
+                    <div class="col-lg-6">
+                        <h2>Justification</h2>
+                        <hr>
+                        <div class="accordion" id="accordionPanelsStayOpenMalwareJustification"
+                            style="text-align: left;">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        Why?
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            Exponential increase in the number of threats associated with the daily spread of new malware. It is practically impossible to think of dealing with the threats effectively using only the analysis conducted by human operators.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        Value
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            Automate the preparatory phase of malware analysis(triage). Conducting a preliminary screening of the malware to be analyzed by the malware analyst allows to respond in a timely and effective manner to real cyber threats.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                        Future Value
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body px-5">
+                                        <p>
+                                            Effectively Detect and distinguish legitimate binary files(.exe,.dll, etc.) from those that are potentially dangerous for the integrity of the machines and the data they contain.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
