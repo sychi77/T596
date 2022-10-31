@@ -501,11 +501,32 @@
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
                                         aria-controls="panelsStayOpen-collapseTwo">
-                                        Analytic Approach (Clustering)
+                                        Creating CSV Data
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
                                     aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body px-5">
+                                        <p>Steps involved in creating MalwareArtifacts.csv</p>
+                                        <ol>
+                                            <li>Malware artifacts are generated using the python library pefile. <a href="https://github.com/erocarrera/pefile" target="_blank">https://github.com/erocarrera/pefile</a></li>
+                                            <li>A set of Malware samples (*.exe) from malwarebazaar.com and another set of non-malicious files (.exe) are run through the python library pefile to extract the artifacts.</li>
+                                            <li>Both datasets are combined to form a MalwareArtifacts.csv which is used to train our model.</li>
+                                            <li>A Label column (legitimate) is created with 1 as legitimate and 0 as suspect.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                        Analytic Approach (Clustering)
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingThree">
                                     <div class="accordion-body px-5">
                                         <ol>
                                             <li>Total records in the dataset - 68723</li>
