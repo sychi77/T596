@@ -69,6 +69,10 @@
                 type="button" role="tab" aria-controls="pills-opint" aria-selected="true">Operational Intelligence</button>
         </li>
         <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-keyint-tab" data-bs-toggle="pill" data-bs-target="#pills-keyint"
+                type="button" role="tab" aria-controls="pills-keyint" aria-selected="true">Key Insights/Intelligence</button>
+        </li>
+        <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-future-tab" data-bs-toggle="pill" data-bs-target="#pills-future"
                 type="button" role="tab" aria-controls="pills-future" aria-selected="false">Future Direction</button>
         </li>
@@ -95,6 +99,54 @@
                         <li>Data over the past few months show an alarming rise in the number of cyber attacks in the Oil & Gas industry (Shodan). Forming a co-operative league with other trusted members in the industry could help collectively reduce response times and overall exposure to new threats</li>
                         <li>Because our firm operates globally, communication plans should be designed in advance to ensure that the proper information gets to the right operatives in field. Standardizing the format of these communiques in advanced based on threat type will help insure timely distribution of information in the appropriate language for that office.</li>
                     </ul>
+                </div>
+            </div>
+            <!-- Key Insights/Intelligence -->
+            <div class="tab-pane fade p-4" id="pills-keyint" role="tabpanel"
+                aria-labelledby="pills-opint-tab">
+                <!-- Title -->
+                <div class="mb-4" style="text-align: left;">
+                    <h1>Key Insights/Intelligence</h1>
+                </div>
+                <div class="p-3">
+                    <img src="./assets/lightbulbs.jpg" alt="Key Insights/Intelligence" class="mw-100 mx-auto d-block">
+                </div>
+                <div class="accordion" id="accordionPanelsStayOpenKeyInt" style="text-align: left;">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            Cross-scripting Attacks
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body px-5">
+                            <p>
+                                Shodan data shows ICS/SCADA/OT/PLC highest vulnerability is cross-scripting attacks.
+                            </p>
+                            <ul style="line-height: 2;">
+                                <li>The data sourced from Shodan detailing vulnerably of ICS/SCADA/OT/PLC showed the most common CPE as cpe:/a:jquery:jquery.</li>
+                                <li>This CPE has 11 entries ranging from medium to severe in the National Vulnerability Database.</li>
+                                <li>All 11 of the entries are regarding cross-scripting attack vulnerabilities.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                            Recent Threats to the Industry
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body px-5">
+                            <ul style="line-height: 2;">
+                                <li>The NJCCIC (New Jersey Communications & Cyber Security Integration Cell) assesses with high confidence the cyber risk to the oil and gas industry is high and the energy sector at large is a priority target for state-sponsored threat actors, cybercriminals, and hacktivists.</li>
+                                <li>Russia's invasion of Ukraine has increased concerns of retaliatory cyberattacks that may target key energy supplies in response to sanctions against Russia, and monetary and weapons support provided to Ukraine. While state-sponsored groups have demonstrated the capability and intent to launch cyberattacks that cause physical damage to energy infrastructure</li>
+                                <li>In May 2021, Colonial Pipeline was the victim of a ransomware attack. The pipeline, which begins in Texas and terminates in Linden, New Jersey, is one of the largest and most vital oil pipelines in the United States, as it moves oil from refineries to industry markets and supplies about 45 percent of fuel to the East Coast. Attackers gained access to the Colonial Pipeline network through an exposed password for a virtual private network (VPN) account found on the dark web. The ransomware infected some of the pipeline's IT systems, shutting it down for several days.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
             <!-- Future Direction -->
