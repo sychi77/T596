@@ -108,17 +108,91 @@
                 <div class="mb-4" style="text-align: left;">
                     <h1>Key Insights/Intelligence</h1>
                 </div>
-                <div class="p-3">
+                <!-- <div class="p-3">
                     <img src="./assets/lightbulbs.jpg" alt="Key Insights/Intelligence" class="mw-100 mx-auto d-block">
-                </div>
+                </div> -->
                 <div class="accordion" id="accordionPanelsStayOpenKeyInt" style="text-align: left;">
                     <div class="accordion-item">
-                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                IoT Devices (Shodan Data)
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <ul style="line-height: 2;">
+                                <li>We observed that close to 8% of the IOT devices(overall), use default username and passwords</li>
+                                <li>More than often using username/passwords as 'admin/1234', 'admin/0000'</li>
+                                <li>Hackers can search devices using default username/password and use this as an entry point for larger exploitation.</li>
+                                <li>The first step to protect IoT devices is to keep the devices off the Shodan grid</li>
+                            </ul>
+                            <img src="./assets/insights/iot1.png" alt="IoT Devices" class="mw-100 mx-auto d-block">
+                            <img src="./assets/insights/iot2.png" alt="IoT Devices" class="mw-100 mx-auto d-block">
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                            Port 21: Anonymous user logged in.
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body px-5">
+                            <ul style="line-height: 2;">
+                                <li>We observed several “port 21: Anonymous user logged in” in the banner part of the Shodan data.</li>
+                                <li>Anonymous FTP enables unprotected access (no password required) to selected information about a remote system.</li>
+                                <li>Primary security risk:</li>
+                                <ul>
+                                    <li>Misconfiguration: Inadvertently grant access to a file that shouldn't be public.</li>
+                                    <li>Security Vulnerability in the IIS code can be exploited.</li>
+                                </ul>
+                            </ul>
+                            <img src="./assets/insights/port21.png" alt="Port 21: Anonymous user Heatmap" class="mw-100 mx-auto d-block">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+                            Tips to keep Devices off the Shodan grid
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body px-5">
+                            <ul style="line-height: 2;">
+                                <li>Install a VPN.</li>
+                                <li>Never use default Configurations. (Ex. passwords, usernames, SSIDs.)</li>
+                                <li>Preferably buy a router directly from the manufacturer rather than from the ISP.</li>
+                                <li>Always configure the software correctly and keep it patched and up-to-date.</li>
+                                <li>Always use HTTPS on the IoT devices and multi-factor authentication where available.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
+                            Geospatial Visualization
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingFour">
+                        <div class="accordion-body px-5">
+                            <img src="./assets/insights/map.png" alt="Geospatial Map" class="mw-100 mx-auto d-block">
+                            <ul style="line-height: 2;">
+                                <li>The cyber risk to ONG Industry in North America, Europe, South America, and the Asia-Pacific is increasing. At the same time, risk to the Middle East and North Africa remain at high level as before</li>
+                                <li>There are several Activity Groups targeting ONG Industry in different regions, some sharing multiple regional targeting of ONG entities. Ex., Parisite, Xenotime, dymalloy, etc.</li>
+                                <li>In 2022, the number of ransomware attacks on ICS entities increased over 300 percent, with five percent of attacks impacting ONG Industry</li>
+                                <li>Oil and gas adversaries are targeting and exploiting internet-exposed assets, remote access, and insecure IoTs and introducing serious risk to the operations environment.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true" aria-controls="panelsStayOpen-collapseFive">
                             Cross-scripting Attacks
                         </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                      </h2>
+                      <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingFive">
                         <div class="accordion-body px-5">
                             <p>
                                 Shodan data shows ICS/SCADA/OT/PLC highest vulnerability is cross-scripting attacks.
@@ -132,12 +206,12 @@
                       </div>
                     </div>
                     <div class="accordion-item">
-                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="true" aria-controls="panelsStayOpen-collapseSix">
                             Recent Threats to the Industry
                         </button>
                       </h2>
-                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+                      <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingSix">
                         <div class="accordion-body px-5">
                             <ul style="line-height: 2;">
                                 <li>The NJCCIC (New Jersey Communications & Cyber Security Integration Cell) assesses with high confidence the cyber risk to the oil and gas industry is high and the energy sector at large is a priority target for state-sponsored threat actors, cybercriminals, and hacktivists.</li>
